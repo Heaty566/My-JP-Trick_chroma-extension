@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Document</title>
+        </head>
+        <title>My JP Trick</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet" />
+        <style>
+                /* Modal Structure */
+
+                html,
+                body {
+                        font-family: "Roboto", sans-serif;
+                        font-size: 14px;
+                        margin: 0;
+                        min-height: 180px;
+                        padding: 0;
+                        width: 384px;
+                }
+
+                * {
+                        box-sizing: border-box;
+                        padding: 0;
+                        margin: 0;
+                }
+
+                .logo {
+                        font-family: "Menlo", monospace;
+                        font-size: 22px;
+                        font-weight: 400;
+                        margin: 0;
+                        color: #5375e2;
+                }
+
+                .brand {
+                        height: 32px;
+                }
+
+                .item {
+                        font-size: 18px;
+                }
+
+                .jp {
+                        font-family: "Yusei Magic", sans-serif;
+                }
+
+                .input {
+                        outline: none;
+                        border: #5375e2 1px solid;
+
+                        text-indent: 4px;
+                        padding: 4px 16px;
+                }
+
+                .btn {
+                        display: inline-block;
+                        padding: 4px 16px;
+                        color: white;
+                        border-radius: 2px;
+                        background-color: #5375e2;
+
+                        outline: none !important;
+                        border: none;
+                        transition: 0.2s;
+                }
+                .btn:hover {
+                        background-color: #171717;
+                }
+        </style>
+        <body>
+                <div class="p-4 flex justify-between items-center">
+                        <img class="brand mr-2" src="images/logo_128.png" />
+                        <h1 class="flex-1 logo">My JP Trick (1.0.0) あ</h1>
+                </div>
+                <div class="p-4">
+                        <input class="border-4 border-light-blue-500 border-opacity-100 input" placeholder="Search" value="" id="input" />
+                        <button class="btn" id="btn">All</button>
+                </div>
+
+                <ul class="p-4 grid grid-cols-5" id="list"></ul>
+
+                <script src="popup.js"></script>
+        </body>
+</html>
