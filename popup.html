@@ -6,85 +6,105 @@
                 <title>Document</title>
         </head>
         <title>My JP Trick</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet" />
         <style>
-                /* Modal Structure */
-
-                html,
-                body {
-                        font-family: "Roboto", sans-serif;
-                        font-size: 14px;
-                        margin: 0;
-                        min-height: 180px;
-                        padding: 0;
-                        width: 384px;
-                }
-
-                * {
+                *,
+                *::before,
+                *::after {
                         box-sizing: border-box;
+                        margin: 0;
                         padding: 0;
-                        margin: 0;
                 }
 
-                .logo {
-                        font-family: "Menlo", monospace;
-                        font-size: 22px;
-                        font-weight: 400;
-                        margin: 0;
-                        color: #5375e2;
+                html {
+                        font-family: Arial, Helvetica, sans-serif;
                 }
 
-                .brand {
-                        height: 32px;
+                .button {
+                        text-transform: capitalize;
+                        color: white;
+                        border: none;
+                        display: inline-block;
+                        padding: 8px;
+                        cursor: pointer;
+                        background-color: rgb(37, 99, 235);
+                        font-weight: 500;
+                        transition: 0.3s;
                 }
 
-                .item {
-                        font-size: 18px;
+                button:focus,
+                input:focus {
+                        outline: none;
                 }
 
-                .jp {
-                        font-family: "Yusei Magic", sans-serif;
+                .button:hover {
+                        background-color: rgba(59, 130, 246);
                 }
 
                 .input {
-                        outline: none;
-                        border: #5375e2 1px solid;
-
-                        text-indent: 4px;
-                        padding: 4px 16px;
-                }
-
-                .btn {
-                        display: inline-block;
-                        padding: 4px 16px;
                         color: white;
-                        border-radius: 2px;
-                        background-color: #5375e2;
-
-                        outline: none !important;
+                        background-color: rgb(37, 99, 235);
+                        display: block;
+                        width: 100%;
+                        padding: 8px;
                         border: none;
-                        transition: 0.2s;
                 }
-                .btn:hover {
-                        background-color: #171717;
+                .input::placeholder {
+                        color: white;
+                }
+                body {
+                        width: 512px;
+                        border: 2px solid rgba(29, 78, 216);
+                        padding: 2px;
+                }
+
+                .top {
+                        color: white;
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        gap: 4px;
+                        margin-bottom: 2px;
+                }
+                .searchBox {
+                        margin-bottom: 4px;
+                }
+
+                .my-2 {
+                        margin: 4px;
+                }
+                .w-full {
+                        width: 100%;
+                }
+
+                .bg-gray-200 {
+                        background-color: rgba(229, 231, 235);
+                }
+                .text-center {
+                        text-align: center;
+                }
+
+                .tb {
+                        display: grid;
+                        font-weight: 600;
+                        grid-template-columns: 3fr 3fr 4fr;
+                }
+
+                td {
+                        padding: 2px;
+                        border: 1px solid rgba(29, 78, 216);
                 }
         </style>
         <body>
-                <div class="p-4 flex justify-between items-center">
-                        <img class="brand mr-2" src="images/logo_128.png" />
-                        <h1 class="flex-1 logo">My JP Trick (1.0.0) あ</h1>
+                <div class="top" id="top"></div>
+                <div class="searchBox">
+                        <input class="input" placeholder="Search..." id="search" />
                 </div>
-                <div class="p-4">
-                        <input class="border-4 border-light-blue-500 border-opacity-100 input" placeholder="Search" value="" id="input" />
-                        <button class="btn" id="btn">All</button>
-                </div>
-
-                <ul class="p-4 grid grid-cols-5" id="list"></ul>
-
+                <div id="result"></div>
+                <script
+                        src="https://code.jquery.com/jquery-3.5.1.min.js"
+                        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+                        crossorigin="anonymous"
+                ></script>
+                <script src="data.js"></script>
                 <script src="popup.js"></script>
         </body>
 </html>

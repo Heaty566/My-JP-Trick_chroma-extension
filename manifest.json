@@ -9,5 +9,6 @@
                 "default_icon": "icon.png",
                 "default_popup": "popup.html"
         },
-        "permissions": ["activeTab"]
+        "permissions": ["activeTab", "https://code.jquery.com/jquery-3.5.1.min.js"],
+        "content_security_policy": "script-src 'self' 'unsafe-eval' https://code.jquery.com/jquery-3.5.1.min.js; object-src 'self'"
 }
